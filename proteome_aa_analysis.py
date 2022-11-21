@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 fasta_file = 'sample.fasta'
-IDs = 'subset.txt'
+subset_file = 'subset.txt'
 
 '''takes a Uniprot proteome and a file containing a subset of Uniprot IDs from 
 the same proteome and then plots the fraction of cysteines, as well as acid, 
@@ -64,7 +64,7 @@ fraction_hydrophobic = proteome_hydrophobic_aa/full_sequence_length
     
 # opening subset file and extracting ids from each line, then adding them
 # to a list
-subset = open(IDs, 'r')
+subset = open(subset_file, 'r')
 subset_IDs = []
 for line in subset:
     stripped_line = line.strip()
