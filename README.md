@@ -1,6 +1,6 @@
 # Proteome Amino Acid Analysis
 
-## Amino Acid Comparison in Full Proteomes and in Subsets
+## Amino Acid Comparison Between Full Proteomes and Subsets
 
 This script takes as input a Uniprot proteome and a file containing a subset of Uniprot IDs from the same proteome. 
 
