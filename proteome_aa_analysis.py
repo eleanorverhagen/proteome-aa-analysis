@@ -116,8 +116,8 @@ percentages = [fraction_cysteins,fraction_basic,fraction_acidic,fraction_hydroph
 # plot graph
 plt.bar(y_pos, percentages, align='center', alpha=0.5)
 plt.xticks(y_pos, objects, rotation=90)
+plt.tight_layout()
 plt.ylabel('Percentages')
-plt.xlabel('Amino Acids Type')
 plt.title('Amino Acid Percentages in Whole Proteome versus the Subset')
     
 plt.show()
