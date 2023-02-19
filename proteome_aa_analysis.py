@@ -51,9 +51,12 @@ def aa_composition_proteome_vs_subset(proteome_file, subset_file):
                 full_sequence_length += len(record.seq)
         
         handle.close()
-        
-        print('Whole proteome: ', proteome_cysteins, 'cysteins,', proteome_basic_aa, 'basic aminos acids,', proteome_acidic_aa, 'acidic amino acids, and', proteome_hydrophobic_aa, 'hydrophobic amino acids')
-        print('The full length of the sequences is ', full_sequence_length)
+
+        logging.info(f'Total cysteine count in the proteome: {proteome_cysteins}')
+        logging.info(f'Total basic amino acid count in the proteome: {proteome_basic_aa}')
+        logging.info(f'Total acidic amino acid count in the proteome: {proteome_acidic_aa}')
+        logging.info(f'Total hydrophobic amino acid count in the proteome: {proteome_hydrophobic_aa}')
+        logging.info(f'The full length of the sequences is {full_sequence_length}')
 
         # finding percent compositions of different types of amino acids in the whole proteome
         fraction_cysteins = proteome_cysteins/full_sequence_length
@@ -97,9 +100,12 @@ def aa_composition_proteome_vs_subset(proteome_file, subset_file):
                     # append the length of sequence for later calculations
                     subset_sequence_length += len(record.seq)
         handle.close()
-                
-        print('Subset: ', subset_cysteins, 'cysteins,', subset_basic_aa, 'basic amino acids,', subset_acidic_aa, 'acidic amino acids, and', subset_hydrophobic_aa, 'hydrophobic amino acids')
-        print('The full length of the subset sequences is', subset_sequence_length)
+    
+        logging.info(f'Total cysteine count in the subset: {subset_cysteins}')
+        logging.info(f'Total basic amino acid count in the subset: {subset_basic_aa}')
+        logging.info(f'Total acidic amino acid count in the subset: {subset_acidic_aa}')
+        logging.info(f'Total hydrophobic amino acid count in the subset: {subset_hydrophobic_aa}')
+        logging.info(f'The full length of the subset sequences is {subset_sequence_length}')
     
         # finding percent compositions of different types of amino acids in the subset
         fraction_cysteins_subset = subset_cysteins/subset_sequence_length
@@ -125,7 +131,7 @@ def aa_composition_proteome_vs_subset(proteome_file, subset_file):
 
     except Exception as e:
         logging.error(f'Error: {str(e)}')
-   
+
 if __name__ == '__main__':
     fasta_file = 'sample.fasta'
     subset_file = 'subset.txt'
